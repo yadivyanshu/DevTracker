@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mrRSi0vzQH7PmA/ioyCWGzdrx1jLK287ajwzOlzAvQI=",
+  "Source": "DevTracker.API",
+  "BasePath": "_content/DevTracker.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

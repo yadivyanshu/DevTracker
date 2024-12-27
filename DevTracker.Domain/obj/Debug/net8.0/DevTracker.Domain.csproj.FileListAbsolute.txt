@@ -1,0 +1,11 @@
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/bin/Debug/net8.0/DevTracker.Domain.deps.json
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/bin/Debug/net8.0/DevTracker.Domain.dll
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/bin/Debug/net8.0/DevTracker.Domain.pdb
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/DevTracker.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/DevTracker.Domain.AssemblyInfoInputs.cache
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/DevTracker.Domain.AssemblyInfo.cs
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/DevTracker.Domain.csproj.CoreCompileInputs.cache
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/DevTracker.Domain.dll
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/refint/DevTracker.Domain.dll
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/DevTracker.Domain.pdb
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/Debug/net8.0/ref/DevTracker.Domain.dll
