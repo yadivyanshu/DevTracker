@@ -1,20 +1,27 @@
 using DevTracker.Domain.Entities;
+using DevTracker.Infrastructure.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevTracker.Infrastructure.Repositories
 {
     public class ProjectRepository
     {
-        private readonly List<Project> _projects = new();
+        private readonly ApplicationDbContext _context;
 
-        public IEnumerable<Project> GetAll()
+        public ProjectRepository(ApplicationDbContext context)
         {
-            return _projects;
+            _context = context;
         }
 
-        public void Add(Project project)
+        public async Task<IEnumerable<Project>> GetAllAsync()
         {
-            project.Id = _projects.Count + 1;
-            _projects.Add(project);
+            return await _context.Projects.ToListAsync();
+        }
+
+        public async Task AddAsync(Project project)
+        {
+            await _context.Projects.AddAsync(project);
+            await _context.SaveChangesAsync();
         }
     }
 }
