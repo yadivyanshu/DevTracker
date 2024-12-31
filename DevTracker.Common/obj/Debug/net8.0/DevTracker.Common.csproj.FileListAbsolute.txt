@@ -5,6 +5,7 @@
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.AssemblyInfoInputs.cache
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.AssemblyInfo.cs
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.csproj.CoreCompileInputs.cache
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.sourcelink.json
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/refint/DevTracker.Common.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.pdb
