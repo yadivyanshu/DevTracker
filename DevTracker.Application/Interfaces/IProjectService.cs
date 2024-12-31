@@ -1,10 +1,10 @@
-using DevTracker.Application.DTOs; // Using DTOs for communication
+using DevTracker.Domain.Entities;
 
 namespace DevTracker.Application.Interfaces
 {
     public interface IProjectService
     {
-        IEnumerable<ProjectDTO> GetAllProjects();
-        void CreateProject(ProjectDTO project);
+        Task<IEnumerable<Project>> GetAllProjectsAsync();
+        Task AddProjectAsync(Project project);
     }
 }

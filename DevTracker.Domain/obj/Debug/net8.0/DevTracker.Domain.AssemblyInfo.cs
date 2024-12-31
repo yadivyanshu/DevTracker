@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevTracker.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ce03838693aa76bde028ef935bc62c49690d6ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25e2f89dc213b1c3962f7ffa38380fcfd8bca626")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevTracker.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevTracker.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

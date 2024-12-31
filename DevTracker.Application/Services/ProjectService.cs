@@ -1,5 +1,5 @@
-using DevTracker.Application.DTOs; // Using DTOs for communication
 using DevTracker.Application.Interfaces;
+using DevTracker.Domain.Entities;
 using DevTracker.Infrastructure.Repositories;
 
 namespace DevTracker.Application.Services
@@ -13,26 +13,14 @@ namespace DevTracker.Application.Services
             _projectRepository = projectRepository;
         }
 
-        public IEnumerable<ProjectDTO> GetAllProjects()
+        public async Task<IEnumerable<Project>> GetAllProjectsAsync()
         {
-            var projects = _projectRepository.GetAll();
-            return projects.Select(p => new ProjectDTO
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Description = p.Description
-            });
+            return await _projectRepository.GetAllAsync();
         }
 
-        public void CreateProject(ProjectDTO project)
+        public async Task AddProjectAsync(Project project)
         {
-            var newProject = new DevTracker.Domain.Entities.Project
-            {
-                Name = project.Name,
-                Description = project.Description
-            };
-            
-            _projectRepository.Add(newProject);
+            await _projectRepository.AddAsync(project);
         }
     }
 }

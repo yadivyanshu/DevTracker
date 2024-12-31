@@ -1,7 +1,7 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Application.Services;
-using DevTracker.Infrastructure.Repositories;
 using DevTracker.Infrastructure.DataContext;
+using DevTracker.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,13 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Database configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
 // Dependency injection
-builder.Services.AddSingleton<ProjectRepository>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ProjectRepository>();
 
 var app = builder.Build();
 
@@ -27,6 +28,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

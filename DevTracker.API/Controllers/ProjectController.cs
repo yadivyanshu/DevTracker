@@ -1,6 +1,7 @@
-using DevTracker.Application.DTOs; // DTOs are in API
-using DevTracker.Application.Interfaces; // Interface is in Application
 using Microsoft.AspNetCore.Mvc;
+using DevTracker.Application.Interfaces;
+using DevTracker.Application.DTOs;
+using DevTracker.Domain.Entities;
 
 namespace DevTracker.API.Controllers
 {
@@ -16,17 +17,23 @@ namespace DevTracker.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetProjects()
+        public async Task<IActionResult> GetAllProjects()
         {
-            var projects = _projectService.GetAllProjects(); // Fetch data from service
+            var projects = await _projectService.GetAllProjectsAsync();
             return Ok(projects);
         }
 
         [HttpPost]
-        public IActionResult CreateProject([FromBody] ProjectDTO project)
+        public async Task<IActionResult> CreateProject([FromBody] ProjectDTO projectDTO)
         {
-            _projectService.CreateProject(project);
-            return Ok("Project created successfully.");
+            var project = new Project
+            {
+                Name = projectDTO.Name,
+                Description = projectDTO.Description
+            };
+
+            await _projectService.AddProjectAsync(project);
+            return Ok(project);
         }
     }
 }
