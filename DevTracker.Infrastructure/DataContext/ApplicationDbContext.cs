@@ -31,6 +31,10 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasIndex(p => p.Name)
                         .IsUnique();
 
+            modelBuilder.Entity<Feature>()
+                        .HasIndex(p => p.Title)
+                        .IsUnique();
+
             // Fixing column in Feature
             modelBuilder.Entity<Feature>()
             .HasOne(f => f.Project)

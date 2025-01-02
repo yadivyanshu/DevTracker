@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using DevTracker.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace DevTracker.Domain.Entities
 {
     public class Feature
     {
         public int Id { get; set; }
-        public int ProjectId { get; set; }
+        public int ProjectId { get; set; }    
         public string Title { get; set; }
         public string Description { get; set; }
         public FeatureStatus Status { get; set; }  
