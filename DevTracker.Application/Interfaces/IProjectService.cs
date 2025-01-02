@@ -4,7 +4,10 @@ namespace DevTracker.Application.Interfaces
 {
     public interface IProjectService
     {
-        Task<IEnumerable<Project>> GetAllProjectsAsync();
-        Task AddProjectAsync(Project project);
+        IEnumerable<Project> GetAllProjects();
+        Project GetProjectById(int id);
+        void CreateProject(Project project);
+        void UpdateProject(Project project);
+        void DeleteProject(int id);
     }
 }

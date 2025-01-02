@@ -5,35 +5,74 @@ using DevTracker.Domain.Entities;
 
 namespace DevTracker.API.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class ProjectController : ControllerBase
     {
-        private readonly IProjectService _projectService;
+        private readonly IProjectService _service;
 
-        public ProjectController(IProjectService projectService)
+        public ProjectController(IProjectService service)
         {
-            _projectService = projectService;
+            _service = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllProjects()
+        public IActionResult GetAllProjects()
         {
-            var projects = await _projectService.GetAllProjectsAsync();
+            var projects = _service.GetAllProjects();
             return Ok(projects);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateProject([FromBody] ProjectDTO projectDTO)
+        [HttpGet("{id}")]
+        public IActionResult GetProjectById(int id)
         {
-            var project = new Project
-            {
-                Name = projectDTO.Name,
-                Description = projectDTO.Description
-            };
-
-            await _projectService.AddProjectAsync(project);
+            var project = _service.GetProjectById(id);
+            if (project == null) return NotFound();
             return Ok(project);
+        }
+
+        [HttpPost]
+        public IActionResult CreateProject([FromBody] ProjectDTO projectDto)
+        {
+            try
+            {
+                var project = new Project
+                {
+                    Name = projectDto.Name,
+                    Description = projectDto.Description
+                };
+
+                _service.CreateProject(project);
+                return CreatedAtAction(nameof(GetProjectById), new { id = project.Id }, project);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateProject(int id, [FromBody] ProjectDTO projectDto)
+        {
+            var project = _service.GetProjectById(id);
+            if (project == null) return NotFound();
+
+            project.Name = projectDto.Name;
+            project.Description = projectDto.Description;
+            project.UpdatedAt = DateTime.UtcNow;
+
+            _service.UpdateProject(project);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProject(int id)
+        {
+            var project = _service.GetProjectById(id);
+            if (project == null) return NotFound();
+
+            _service.DeleteProject(id);
+            return NoContent();
         }
     }
 }

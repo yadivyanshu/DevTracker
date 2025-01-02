@@ -1,6 +1,7 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Application.Services;
 using DevTracker.Infrastructure.DataContext;
+using DevTracker.Infrastructure.Repositories.Interfaces;
 using DevTracker.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Dependency injection
 builder.Services.AddScoped<IProjectService, ProjectService>();
-builder.Services.AddScoped<ProjectRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
 var app = builder.Build();
 

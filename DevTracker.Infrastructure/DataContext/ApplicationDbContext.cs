@@ -11,5 +11,21 @@ namespace DevTracker.Infrastructure.DataContext
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Feature> Features { get; set; } 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure relationships if needed
+            modelBuilder.Entity<Project>()
+                        .HasMany(p => p.Features)
+                        .WithOne()
+                        .HasForeignKey(f => f.ProjectId);
+
+            // Add a unique index
+            modelBuilder.Entity<Project>()
+                        .HasIndex(p => p.Name)
+                        .IsUnique();
+        }
     }
 }

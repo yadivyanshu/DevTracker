@@ -1,26 +1,49 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Domain.Entities;
-using DevTracker.Infrastructure.Repositories;
+using DevTracker.Infrastructure.Repositories.Interfaces;
 
 namespace DevTracker.Application.Services
 {
     public class ProjectService : IProjectService
     {
-        private readonly ProjectRepository _projectRepository;
+        private readonly IProjectRepository _repository;
 
-        public ProjectService(ProjectRepository projectRepository)
+        public ProjectService(IProjectRepository repository)
         {
-            _projectRepository = projectRepository;
+            _repository = repository;
         }
 
-        public async Task<IEnumerable<Project>> GetAllProjectsAsync()
+        public IEnumerable<Project> GetAllProjects()
         {
-            return await _projectRepository.GetAllAsync();
+            return _repository.GetAll();
         }
 
-        public async Task AddProjectAsync(Project project)
+        public Project GetProjectById(int id)
         {
-            await _projectRepository.AddAsync(project);
+            return _repository.GetById(id);
+        }
+
+        public void CreateProject(Project project)
+        {
+            if (_repository.IsNameTaken(project.Name))
+            {
+                throw new ArgumentException("A project with the same name already exists.");
+            }
+            _repository.Add(project);
+        }
+
+        public void UpdateProject(Project project)
+        {
+            if (_repository.IsNameTaken(project.Name))
+            {
+                throw new ArgumentException("A project with the same name already exists.");
+            }
+            _repository.Update(project);
+        }
+
+        public void DeleteProject(int id)
+        {
+            _repository.Delete(id);
         }
     }
 }
