@@ -12,5 +12,6 @@ namespace DevTracker.Application.Interfaces
         Task<Feature> AddFeatureAsync(Feature feature);
         Task<Feature> UpdateFeature(int id, Feature feature);
         Task<bool> DeleteFeature(int id);
+        Task<List<Feature>> GetFeaturesByProjectIdAsync(int projectId);
     }
 }

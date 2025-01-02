@@ -10,10 +10,12 @@ namespace DevTracker.API.Controllers
     public class ProjectController : ControllerBase
     {
         private readonly IProjectService _service;
+        private readonly IFeatureService _featureService;
 
-        public ProjectController(IProjectService service)
+        public ProjectController(IProjectService service, IFeatureService featureService)
         {
             _service = service;
+            _featureService = featureService;
         }
 
         [HttpGet]
@@ -73,6 +75,19 @@ namespace DevTracker.API.Controllers
 
             _service.DeleteProject(id);
             return NoContent();
+        }
+
+        [HttpGet("{projectId}/features")]
+        public async Task<IActionResult> GetFeaturesByProjectId(int projectId)
+        {
+            var features = await _featureService.GetFeaturesByProjectIdAsync(projectId);
+
+            if (features == null || !features.Any())
+            {
+                return NotFound("No features found for this project.");
+            }
+
+            return Ok(features);
         }
     }
 }

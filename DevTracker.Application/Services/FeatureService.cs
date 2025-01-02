@@ -1,16 +1,20 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Domain.Entities;
 using DevTracker.Infrastructure.Repositories.Interfaces;
+using DevTracker.Infrastructure.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevTracker.Application.Services
 {
     public class FeatureService : IFeatureService
     {
         private readonly IFeatureRepository _featureRepository;
+        private readonly ApplicationDbContext _context;
 
-        public FeatureService(IFeatureRepository featureRepository)
+        public FeatureService(IFeatureRepository featureRepository, ApplicationDbContext context)
         {
             _featureRepository = featureRepository;
+            _context = context;
         }
 
         public async Task<List<Feature>> GetAllFeatures()
@@ -57,6 +61,13 @@ namespace DevTracker.Application.Services
                 return await _featureRepository.DeleteAsync(feature);
             }
             return false;
+        }
+
+        public async Task<List<Feature>> GetFeaturesByProjectIdAsync(int projectId)
+        {
+            return await _context.Features
+                                .Where(f => f.ProjectId == projectId)
+                                .ToListAsync();
         }
     }
 }
