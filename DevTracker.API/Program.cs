@@ -1,4 +1,5 @@
 using DevTracker.Application.Interfaces;
+using DevTracker.Application.Mappings;
 using DevTracker.Application.Services;
 using DevTracker.Infrastructure.DataContext;
 using DevTracker.Infrastructure.Repositories.Interfaces;
@@ -8,6 +9,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(UserProfile).Assembly);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -30,6 +33,9 @@ builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
 
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -45,4 +51,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run(); 

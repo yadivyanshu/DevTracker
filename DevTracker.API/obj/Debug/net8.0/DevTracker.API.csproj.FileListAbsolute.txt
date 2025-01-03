@@ -184,3 +184,4 @@
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/bin/Debug/net8.0/BCrypt.Net-Next.dll

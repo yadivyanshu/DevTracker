@@ -11,6 +11,7 @@ namespace DevTracker.Infrastructure.DataContext
         {
         }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Feature> Features { get; set; } 
         // public DbSet<Task> Tasks { get; set; }
@@ -35,6 +36,14 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasIndex(p => p.Title)
                         .IsUnique();
 
+            modelBuilder.Entity<User>()
+                        .HasIndex(p => p.Username)
+                        .IsUnique();
+
+            modelBuilder.Entity<User>()
+                        .HasIndex(p => p.Email)
+                        .IsUnique();
+
             // Fixing column in Feature
             modelBuilder.Entity<Feature>()
             .HasOne(f => f.Project)
@@ -47,6 +56,13 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasConversion(
                             v => v.ToString(), // Enum to string for database
                             v => (FeatureStatus)Enum.Parse(typeof(FeatureStatus), v) // String to enum for code
+                        );
+
+            modelBuilder.Entity<User>()
+                        .Property(f => f.Role)
+                        .HasConversion(
+                            v => v.ToString(), // Enum to string for database
+                            v => (UserRole)Enum.Parse(typeof(UserRole), v) // String to enum for code
                         );
         }
     }
