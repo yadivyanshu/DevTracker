@@ -1,8 +1,6 @@
 using DevTracker.Infrastructure.DataContext;
 using DevTracker.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 using DevTracker.Infrastructure.Repositories.Interfaces;
 
 namespace DevTracker.Infrastructure.Repositories
@@ -31,19 +29,19 @@ namespace DevTracker.Infrastructure.Repositories
             return await _context.Users.ToListAsync();
         }
 
-        public async Task AddUserAsync(User user)
+        public async System.Threading.Tasks.Task AddUserAsync(User user)
         {
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateUserAsync(User user)
+        public async System.Threading.Tasks.Task UpdateUserAsync(User user)
         {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteUserAsync(int id)
+        public async System.Threading.Tasks.Task DeleteUserAsync(int id)
         {
             var user = await _context.Users.FindAsync(id);
             if (user != null)

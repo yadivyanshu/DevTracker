@@ -1930,6 +1930,7 @@
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "BCrypt.Net-Next": "4.0.3",
+          "DevTracker.Common": "1.0.0",
           "DevTracker.Infrastructure": "1.0.0",
           "FluentValidation": "11.11.0"
         },
@@ -1938,6 +1939,16 @@
         },
         "runtime": {
           "bin/placeholder/DevTracker.Application.dll": {}
+        }
+      },
+      "DevTracker.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DevTracker.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DevTracker.Common.dll": {}
         }
       },
       "DevTracker.Domain/1.0.0": {
@@ -5698,6 +5709,11 @@
       "type": "project",
       "path": "../DevTracker.Application/DevTracker.Application.csproj",
       "msbuildProject": "../DevTracker.Application/DevTracker.Application.csproj"
+    },
+    "DevTracker.Common/1.0.0": {
+      "type": "project",
+      "path": "../DevTracker.Common/DevTracker.Common.csproj",
+      "msbuildProject": "../DevTracker.Common/DevTracker.Common.csproj"
     },
     "DevTracker.Domain/1.0.0": {
       "type": "project",

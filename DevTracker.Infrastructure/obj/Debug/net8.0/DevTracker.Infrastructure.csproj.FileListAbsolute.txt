@@ -1,4 +1,5 @@
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/bin/Debug/net8.0/DevTracker.Infrastructure.deps.json
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/bin/Debug/net8.0/DevTracker.Infrastructure.runtimeconfig.json
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/bin/Debug/net8.0/DevTracker.Infrastructure.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/bin/Debug/net8.0/DevTracker.Infrastructure.pdb
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/bin/Debug/net8.0/DevTracker.Domain.dll
@@ -13,6 +14,5 @@
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/Debug/net8.0/DevTracker.Infrastructure.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/Debug/net8.0/refint/DevTracker.Infrastructure.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/Debug/net8.0/DevTracker.Infrastructure.pdb
-/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/Debug/net8.0/ref/DevTracker.Infrastructure.dll
-/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/bin/Debug/net8.0/DevTracker.Infrastructure.runtimeconfig.json
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/Debug/net8.0/DevTracker.Infrastructure.genruntimeconfig.cache
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/Debug/net8.0/ref/DevTracker.Infrastructure.dll
