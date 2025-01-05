@@ -1237,11 +1237,20 @@
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "BCrypt.Net-Next": "4.0.3",
+          "DevTracker.Common": "1.0.0",
           "DevTracker.Infrastructure": "1.0.0",
           "FluentValidation": "11.11.0"
         },
         "runtime": {
           "DevTracker.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DevTracker.Common/1.0.0": {
+        "runtime": {
+          "DevTracker.Common.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1959,6 +1968,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "DevTracker.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevTracker.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

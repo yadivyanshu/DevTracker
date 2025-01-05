@@ -11,6 +11,10 @@ namespace DevTracker.Application.Mappings
             CreateMap<CreateUserDTO, User>();
             CreateMap<UpdateUserDTO, User>();
             CreateMap<User, UserDTO>();
+
+            CreateMap<TaskItem, TaskItemDTO>().ReverseMap();
+            CreateMap<TaskItem, CreateTaskItemDTO>().ReverseMap();
+            CreateMap<TaskItem, UpdateTaskItemDTO>().ReverseMap();
         }
     }
 }

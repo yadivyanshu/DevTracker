@@ -91,6 +91,49 @@ namespace DevTracker.Infrastructure.Migrations
                     b.ToTable("Projects");
                 });
 
+            modelBuilder.Entity("DevTracker.Domain.Entities.TaskItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AssigneeId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("FeatureId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssigneeId");
+
+                    b.HasIndex("FeatureId");
+
+                    b.ToTable("TaskItems");
+                });
+
             modelBuilder.Entity("DevTracker.Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -145,6 +188,25 @@ namespace DevTracker.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("DevTracker.Domain.Entities.TaskItem", b =>
+                {
+                    b.HasOne("DevTracker.Domain.Entities.User", "Assignee")
+                        .WithMany()
+                        .HasForeignKey("AssigneeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevTracker.Domain.Entities.Feature", "Feature")
+                        .WithMany()
+                        .HasForeignKey("FeatureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Assignee");
+
+                    b.Navigation("Feature");
                 });
 
             modelBuilder.Entity("DevTracker.Domain.Entities.Project", b =>

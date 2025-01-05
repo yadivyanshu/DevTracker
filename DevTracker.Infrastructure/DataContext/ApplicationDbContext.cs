@@ -14,7 +14,7 @@ namespace DevTracker.Infrastructure.DataContext
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Feature> Features { get; set; } 
-        // public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskItem> TaskItems { get; set; }
         // public DbSet<Bug> Bugs { get; set; }
         // public DbSet<Tagging> Taggings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
