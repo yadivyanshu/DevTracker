@@ -2,13 +2,7 @@ using DevTracker.Domain.Entities;
 using DevTracker.Infrastructure.Repositories.Interfaces;
 using DevTracker.Application.DTOs;
 using DevTracker.Application.Interfaces;
-using DevTracker.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using AutoMapper;
-using System.Linq;
-using BCrypt.Net;
 
 namespace DevTracker.Application.Services
 {
@@ -44,7 +38,7 @@ namespace DevTracker.Application.Services
             return _mapper.Map<UserDTO>(user);
         }
 
-        public async System.Threading.Tasks.Task UpdateUserAsync(int id, UpdateUserDTO updateUserDTO)
+        public async Task UpdateUserAsync(int id, UpdateUserDTO updateUserDTO)
         {
             var user = await _userRepository.GetUserByIdAsync(id);
             if (user == null) throw new Exception("User not found");
@@ -54,7 +48,7 @@ namespace DevTracker.Application.Services
             await _userRepository.UpdateUserAsync(user);
         }
 
-        public async System.Threading.Tasks.Task DeleteUserAsync(int id)
+        public async Task DeleteUserAsync(int id)
         {
             await _userRepository.DeleteUserAsync(id);
         }

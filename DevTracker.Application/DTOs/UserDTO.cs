@@ -1,5 +1,4 @@
 using DevTracker.Domain.Enums;
-using System;
 
 namespace DevTracker.Application.DTOs
 {
