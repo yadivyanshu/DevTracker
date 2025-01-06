@@ -1,10 +1,8 @@
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Application.deps.json
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Application.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Application.pdb
-/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Common.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Domain.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Infrastructure.dll
-/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Common.pdb
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Infrastructure.pdb
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Domain.pdb
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/obj/Debug/net8.0/DevTracker.Application.csproj.AssemblyReference.cache

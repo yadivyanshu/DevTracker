@@ -1,3 +1,4 @@
+using System;
 using DevTracker.Domain.Entities;
 namespace DevTracker.Infrastructure.Repositories.Interfaces{
     public interface IUserRepository

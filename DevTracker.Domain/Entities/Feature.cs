@@ -1,6 +1,9 @@
-
+using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using DevTracker.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace DevTracker.Domain.Entities
 {
@@ -16,7 +19,7 @@ namespace DevTracker.Domain.Entities
         [JsonIgnore]
         public Project Project { get; set; }
         // public ICollection<Tagging> Taggings { get; set; } // To handle many-to-many relationship
-        public ICollection<Task> Tasks { get; set; }
+        // public ICollection<Task> Tasks { get; set; }
         // public ICollection<Bug> Bugs { get; set; }
     }
 }
