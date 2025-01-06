@@ -3,6 +3,7 @@ using DevTracker.Infrastructure.Repositories.Interfaces;
 using DevTracker.Application.DTOs;
 using DevTracker.Application.Interfaces;
 using AutoMapper;
+using DevTracker.Domain.Enums;
 
 namespace DevTracker.Application.Services
 {
@@ -35,6 +36,7 @@ namespace DevTracker.Application.Services
             var task = _mapper.Map<TaskItem>(createTaskItemDTO);
             task.CreatedAt = DateTime.UtcNow;
             task.UpdatedAt = DateTime.UtcNow;
+            task.Status = TaskItemStatus.ToDo;
 
             await _taskItemRepository.AddTaskAsync(task);
             return _mapper.Map<TaskItemDTO>(task);

@@ -45,7 +45,7 @@ namespace DevTracker.Infrastructure.DataContext
                         .IsUnique();
 
             modelBuilder.Entity<TaskItem>()
-                        .HasIndex(p => p.Title)
+                        .HasIndex(p => new { p.FeatureId, p.Title })  // composite unique index
                         .IsUnique();
 
             // Fixing column in Feature
