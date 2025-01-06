@@ -15,7 +15,7 @@ namespace DevTracker.Infrastructure.DataContext
         public DbSet<Project> Projects { get; set; }
         public DbSet<Feature> Features { get; set; } 
         public DbSet<TaskItem> TaskItems { get; set; }
-        // public DbSet<Bug> Bugs { get; set; }
+        public DbSet<Bug> Bugs { get; set; }
         // public DbSet<Tagging> Taggings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -48,6 +48,10 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasIndex(p => new { p.FeatureId, p.Title })  // composite unique index
                         .IsUnique();
 
+            modelBuilder.Entity<Bug>()
+                        .HasIndex(p => new { p.FeatureId, p.Title })  // composite unique index
+                        .IsUnique();
+
             // Fixing column in Feature
             modelBuilder.Entity<Feature>()
             .HasOne(f => f.Project)
@@ -74,6 +78,20 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasConversion(
                             v => v.ToString(), // Enum to string for database
                             v => (TaskItemStatus)Enum.Parse(typeof(TaskItemStatus), v) // String to enum for code
+                        );
+
+            modelBuilder.Entity<Bug>()
+                        .Property(f => f.Status)
+                        .HasConversion(
+                            v => v.ToString(), // Enum to string for database
+                            v => (BugStatus)Enum.Parse(typeof(BugStatus), v) // String to enum for code
+                        );
+
+            modelBuilder.Entity<Bug>()
+                        .Property(f => f.Severity)
+                        .HasConversion(
+                            v => v.ToString(), // Enum to string for database
+                            v => (BugSeverity)Enum.Parse(typeof(BugSeverity), v) // String to enum for code
                         );
         }
     }
