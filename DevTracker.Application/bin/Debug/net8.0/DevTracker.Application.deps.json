@@ -11,6 +11,7 @@
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "BCrypt.Net-Next": "4.0.3",
+          "DevTracker.Common": "1.0.0",
           "DevTracker.Infrastructure": "1.0.0",
           "FluentValidation": "11.11.0"
         },
@@ -755,6 +756,14 @@
           }
         }
       },
+      "DevTracker.Common/1.0.0": {
+        "runtime": {
+          "DevTracker.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "DevTracker.Domain/1.0.0": {
         "runtime": {
           "DevTracker.Domain.dll": {
@@ -1262,6 +1271,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "DevTracker.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DevTracker.Domain/1.0.0": {
       "type": "project",

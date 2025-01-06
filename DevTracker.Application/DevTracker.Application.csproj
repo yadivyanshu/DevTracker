@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../DevTracker.Common/DevTracker.Common.csproj" />
     <ProjectReference Include="../DevTracker.Infrastructure/DevTracker.Infrastructure.csproj" />
   </ItemGroup>
 

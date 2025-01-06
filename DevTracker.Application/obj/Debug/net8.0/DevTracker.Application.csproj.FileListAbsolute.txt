@@ -16,3 +16,5 @@
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/obj/Debug/net8.0/refint/DevTracker.Application.dll
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/obj/Debug/net8.0/DevTracker.Application.pdb
 /Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/obj/Debug/net8.0/ref/DevTracker.Application.dll
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Common.dll
+/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/bin/Debug/net8.0/DevTracker.Common.pdb
