@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
+      "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
       "projectName": "DevTracker.Domain",
-      "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
+      "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
       "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-      "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/",
+      "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"

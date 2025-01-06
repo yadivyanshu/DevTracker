@@ -44,6 +44,10 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasIndex(p => p.Email)
                         .IsUnique();
 
+            modelBuilder.Entity<TaskItem>()
+                        .HasIndex(p => p.Title)
+                        .IsUnique();
+
             // Fixing column in Feature
             modelBuilder.Entity<Feature>()
             .HasOne(f => f.Project)
@@ -63,6 +67,13 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasConversion(
                             v => v.ToString(), // Enum to string for database
                             v => (UserRole)Enum.Parse(typeof(UserRole), v) // String to enum for code
+                        );
+
+            modelBuilder.Entity<TaskItem>()
+                        .Property(f => f.Status)
+                        .HasConversion(
+                            v => v.ToString(), // Enum to string for database
+                            v => (TaskItemStatus)Enum.Parse(typeof(TaskItemStatus), v) // String to enum for code
                         );
         }
     }

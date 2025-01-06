@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4Qnj75E1OQE=",
+  "dgSpecHash": "9fY+vVKXCig=",
   "success": true,
-  "projectFilePath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj",
+  "projectFilePath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj",
   "expectedPackageFiles": [
     "/Users/divyanshuyadav/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/divyanshuyadav/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -115,8 +115,9 @@ namespace DevTracker.Infrastructure.Migrations
                     b.Property<int>("FeatureId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -130,6 +131,9 @@ namespace DevTracker.Infrastructure.Migrations
                     b.HasIndex("AssigneeId");
 
                     b.HasIndex("FeatureId");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
 
                     b.ToTable("TaskItems");
                 });
