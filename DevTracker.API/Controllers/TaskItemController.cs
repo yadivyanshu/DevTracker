@@ -20,6 +20,13 @@ public class TaskItemController : ControllerBase
         return Ok(task);
     }
 
+    [HttpGet("feature/{featureId}")]
+    public async Task<IActionResult> GetTasksByFeatureId(int featureId)
+    {
+        var tasks = await _taskItemService.GetByFeatureIdAsync(featureId);
+        return Ok(tasks);
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetAllTasks()
     {

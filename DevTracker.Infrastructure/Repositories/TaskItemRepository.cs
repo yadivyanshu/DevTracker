@@ -19,6 +19,11 @@ namespace DevTracker.Infrastructure.Repositories
             return await _context.TaskItems.Include(t => t.Assignee).Include(t => t.Feature).FirstOrDefaultAsync(t => t.Id == id);
         }
 
+        public async Task<List<TaskItem>> GetByFeatureIdAsync(int featureId)
+        {
+            return await _context.TaskItems.Where(t => t.FeatureId == featureId).ToListAsync();
+        }
+
         public async Task<List<TaskItem>> GetAllTasksAsync()
         {
             return await _context.TaskItems.Include(t => t.Assignee).Include(t => t.Feature).ToListAsync();

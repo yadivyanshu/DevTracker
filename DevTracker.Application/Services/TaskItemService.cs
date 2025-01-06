@@ -25,6 +25,12 @@ namespace DevTracker.Application.Services
             return _mapper.Map<TaskItemDTO>(task);
         }
 
+        public async Task<List<TaskItemDTO>> GetByFeatureIdAsync(int featureId)
+        {
+            var tasks = await _taskItemRepository.GetByFeatureIdAsync(featureId);
+            return tasks.Select(t => _mapper.Map<TaskItemDTO>(t)).ToList();
+        }
+
         public async Task<List<TaskItemDTO>> GetAllTasksAsync()
         {
             var tasks = await _taskItemRepository.GetAllTasksAsync();
