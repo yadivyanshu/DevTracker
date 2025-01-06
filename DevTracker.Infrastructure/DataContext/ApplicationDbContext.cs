@@ -16,7 +16,9 @@ namespace DevTracker.Infrastructure.DataContext
         public DbSet<Feature> Features { get; set; } 
         public DbSet<TaskItem> TaskItems { get; set; }
         public DbSet<Bug> Bugs { get; set; }
-        // public DbSet<Tagging> Taggings { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Tagging> Taggings { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -26,6 +28,13 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasMany(p => p.Features)
                         .WithOne()
                         .HasForeignKey(f => f.ProjectId);
+
+            // Tagging table relationships
+            modelBuilder.Entity<Tagging>()
+                .HasOne(t => t.Tag)
+                .WithMany()
+                .HasForeignKey(t => t.TagId);
+
 
             // Add a unique index
             modelBuilder.Entity<Project>()
@@ -44,14 +53,22 @@ namespace DevTracker.Infrastructure.DataContext
                         .HasIndex(p => p.Email)
                         .IsUnique();
 
+            modelBuilder.Entity<Tag>()
+                .HasIndex(t => t.Name)
+                .IsUnique();
+
             modelBuilder.Entity<TaskItem>()
                         .HasIndex(p => new { p.FeatureId, p.Title })  // composite unique index
                         .IsUnique();
 
             modelBuilder.Entity<Bug>()
-                        .HasIndex(p => new { p.FeatureId, p.Title })  // composite unique index
+                        .HasIndex(p => new { p.FeatureId, p.Title })
                         .IsUnique();
 
+            modelBuilder.Entity<Tagging>()
+                .HasIndex(t => new { t.EntityId, t.EntityType, t.TagId })
+                .IsUnique();
+            
             // Fixing column in Feature
             modelBuilder.Entity<Feature>()
             .HasOne(f => f.Project)
@@ -69,29 +86,36 @@ namespace DevTracker.Infrastructure.DataContext
             modelBuilder.Entity<User>()
                         .Property(f => f.Role)
                         .HasConversion(
-                            v => v.ToString(), // Enum to string for database
-                            v => (UserRole)Enum.Parse(typeof(UserRole), v) // String to enum for code
+                            v => v.ToString(), 
+                            v => (UserRole)Enum.Parse(typeof(UserRole), v) 
                         );
 
             modelBuilder.Entity<TaskItem>()
                         .Property(f => f.Status)
                         .HasConversion(
-                            v => v.ToString(), // Enum to string for database
-                            v => (TaskItemStatus)Enum.Parse(typeof(TaskItemStatus), v) // String to enum for code
+                            v => v.ToString(), 
+                            v => (TaskItemStatus)Enum.Parse(typeof(TaskItemStatus), v) 
                         );
 
             modelBuilder.Entity<Bug>()
                         .Property(f => f.Status)
                         .HasConversion(
-                            v => v.ToString(), // Enum to string for database
-                            v => (BugStatus)Enum.Parse(typeof(BugStatus), v) // String to enum for code
+                            v => v.ToString(), 
+                            v => (BugStatus)Enum.Parse(typeof(BugStatus), v) 
                         );
 
             modelBuilder.Entity<Bug>()
                         .Property(f => f.Severity)
                         .HasConversion(
-                            v => v.ToString(), // Enum to string for database
-                            v => (BugSeverity)Enum.Parse(typeof(BugSeverity), v) // String to enum for code
+                            v => v.ToString(), 
+                            v => (BugSeverity)Enum.Parse(typeof(BugSeverity), v) 
+                        );
+
+            modelBuilder.Entity<Tagging>()
+                        .Property(f => f.EntityType)
+                        .HasConversion(
+                            v => v.ToString(), 
+                            v => (EntityTypeEnum)Enum.Parse(typeof(EntityTypeEnum), v) 
                         );
         }
     }

@@ -19,6 +19,9 @@ namespace DevTracker.Application.Mappings
             CreateMap<Bug, BugDTO>().ReverseMap();
             CreateMap<Bug, CreateBugDTO>().ReverseMap();
             CreateMap<Bug, UpdateBugDTO>().ReverseMap();
+
+            CreateMap<Tag, TagDTO>().ReverseMap();
+            CreateMap<Tag, CreateTagDTO>().ReverseMap();
         }
     }
 }
