@@ -1,4 +1,6 @@
 using DevTracker.Domain.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DevTracker.Application.Interfaces
 {
