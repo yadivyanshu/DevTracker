@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj": {}
+    "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj": {}
   },
   "projects": {
-    "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj": {
+    "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj",
+        "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj",
         "projectName": "DevTracker.API",
-        "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj",
+        "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj",
         "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-        "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/obj/",
+        "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj": {
-                "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj"
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj"
               },
-              "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
-                "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj"
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj": {
+    "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj",
+        "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj",
         "projectName": "DevTracker.Application",
-        "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj",
+        "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj",
         "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-        "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/obj/",
+        "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"
@@ -118,11 +118,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/DevTracker.Common.csproj": {
-                "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/DevTracker.Common.csproj"
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj"
               },
-              "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
-                "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj"
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj"
               }
             }
           }
@@ -179,14 +179,14 @@
         }
       }
     },
-    "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/DevTracker.Common.csproj": {
+    "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/DevTracker.Common.csproj",
+        "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj",
         "projectName": "DevTracker.Common",
-        "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/DevTracker.Common.csproj",
+        "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj",
         "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-        "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Common/obj/",
+        "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"
@@ -237,14 +237,14 @@
         }
       }
     },
-    "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
+    "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
+        "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
         "projectName": "DevTracker.Domain",
-        "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
+        "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj",
         "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-        "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/obj/",
+        "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"
@@ -295,14 +295,14 @@
         }
       }
     },
-    "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
+    "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj",
+        "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj",
         "projectName": "DevTracker.Infrastructure",
-        "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj",
+        "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj",
         "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-        "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/obj/",
+        "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"
@@ -317,8 +317,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
-                "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj"
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj"
               }
             }
           }

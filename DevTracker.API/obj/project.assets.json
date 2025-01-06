@@ -5743,11 +5743,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj",
+      "projectUniqueName": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj",
       "projectName": "DevTracker.API",
-      "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/DevTracker.API.csproj",
+      "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/DevTracker.API.csproj",
       "packagesPath": "/Users/divyanshuyadav/.nuget/packages/",
-      "outputPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.API/obj/",
+      "outputPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/divyanshuyadav/.nuget/NuGet/NuGet.Config"
@@ -5762,11 +5762,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj": {
-              "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Application/DevTracker.Application.csproj"
+            "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj": {
+              "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Application/DevTracker.Application.csproj"
             },
-            "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
-              "projectPath": "/Users/divyanshuyadav/Desktop/Code/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj"
+            "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj": {
+              "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Infrastructure/DevTracker.Infrastructure.csproj"
             }
           }
         }
