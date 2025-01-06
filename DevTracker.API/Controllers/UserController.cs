@@ -1,7 +1,6 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace DevTracker.API.Controllers
 {

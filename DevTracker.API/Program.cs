@@ -36,8 +36,8 @@ builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-builder.Services.AddScoped<ITaskService, TaskService>();
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+// builder.Services.AddScoped<ITaskService, TaskService>();
+// builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
 var app = builder.Build();
 

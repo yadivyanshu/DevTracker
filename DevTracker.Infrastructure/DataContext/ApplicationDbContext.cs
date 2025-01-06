@@ -14,7 +14,7 @@ namespace DevTracker.Infrastructure.DataContext
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Feature> Features { get; set; } 
-        public DbSet<FeatureTask> FeatureTasks { get; set; }
+        // public DbSet<FeatureTask> FeatureTasks { get; set; }
         // public DbSet<Bug> Bugs { get; set; }
         // public DbSet<Tagging> Taggings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,13 +46,13 @@ namespace DevTracker.Infrastructure.DataContext
 
             // modelBuilder.Entity<FeatureTask>()
             //             .HasKey(t => t.Id);
-            modelBuilder.Entity<FeatureTask>(entity =>
-            {
-                entity.HasKey(e => e.Id); // Explicitly define primary key
-            });
-            modelBuilder.Entity<FeatureTask>()
-                        .HasIndex(p => p.Title)
-                        .IsUnique();
+            // modelBuilder.Entity<FeatureTask>(entity =>
+            // {
+            //     entity.HasKey(e => e.Id); // Explicitly define primary key
+            // });
+            // modelBuilder.Entity<FeatureTask>()
+            //             .HasIndex(p => p.Title)
+            //             .IsUnique();
             // modelBuilder.Entity<FeatureTask>().HasNoKey();
 
             // Fixing column in Feature
@@ -76,12 +76,12 @@ namespace DevTracker.Infrastructure.DataContext
                             v => (UserRole)Enum.Parse(typeof(UserRole), v) // String to enum for code
                         );
 
-            modelBuilder.Entity<FeatureTask>()
-                        .Property(f => f.Status)
-                        .HasConversion(
-                            v => v.ToString(), // Enum to string for database
-                            v => (FeatureTaskStatus)Enum.Parse(typeof(FeatureTaskStatus), v) // String to enum for code
-                        );
+            // modelBuilder.Entity<FeatureTask>()
+            //             .Property(f => f.Status)
+            //             .HasConversion(
+            //                 v => v.ToString(), // Enum to string for database
+            //                 v => (FeatureTaskStatus)Enum.Parse(typeof(FeatureTaskStatus), v) // String to enum for code
+            //             );
 
             
         }

@@ -1,5 +1,4 @@
 using DevTracker.Domain.Enums;
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace DevTracker.API.DTOs
