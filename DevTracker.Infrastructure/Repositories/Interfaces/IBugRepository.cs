@@ -10,5 +10,6 @@ namespace DevTracker.Infrastructure.Repositories.Interfaces
         Task AddAsync(Bug bug);
         Task UpdateAsync(Bug bug);
         Task DeleteAsync(int id);
+        Task<bool> EntityExistsAsync(int bugId);
     }
 }

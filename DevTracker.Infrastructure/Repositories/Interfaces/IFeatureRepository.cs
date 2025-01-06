@@ -10,5 +10,6 @@ namespace DevTracker.Infrastructure.Repositories.Interfaces
         Task<Feature> UpdateAsync(Feature feature);
         Task<bool> DeleteAsync(Feature feature);
         Task<int> SaveChangesAsync();
+        Task<bool> EntityExistsAsync(int featureId);
     }
 }

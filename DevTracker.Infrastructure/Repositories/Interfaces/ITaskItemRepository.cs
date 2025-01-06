@@ -9,5 +9,6 @@ namespace DevTracker.Infrastructure.Repositories.Interfaces{
         Task AddTaskAsync(TaskItem taskItem);
         Task UpdateTaskAsync(TaskItem taskItem);
         Task DeleteTaskAsync(int id);
+        Task<bool> EntityExistsAsync(int taskItemId);
     }
 }

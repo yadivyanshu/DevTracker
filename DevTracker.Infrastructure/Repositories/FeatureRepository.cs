@@ -51,5 +51,10 @@ namespace DevTracker.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public async Task<bool> EntityExistsAsync(int featureId)
+        {
+            return await _context.Features.AnyAsync(f => f.Id == featureId);
+        }
     }
 }

@@ -50,5 +50,10 @@ namespace DevTracker.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<bool> EntityExistsAsync(int taskItemId)
+        {
+            return await _context.TaskItems.AnyAsync(t => t.Id == taskItemId);
+        }
     }
 }
