@@ -39,6 +39,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITaskItemService, TaskItemService>();
 builder.Services.AddScoped<ITaskItemRepository, TaskItemRepository>();
 
+builder.Services.AddScoped<IBugService, BugService>();
+builder.Services.AddScoped<IBugRepository, BugRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
