@@ -5,7 +5,6 @@ using DevTracker.Infrastructure.DataContext;
 using DevTracker.Infrastructure.Repositories.Interfaces;
 using DevTracker.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,6 +43,9 @@ builder.Services.AddScoped<IBugRepository, BugRepository>();
 
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
+
+builder.Services.AddScoped<ITagSearchService, TagSearchService>();
+builder.Services.AddScoped<ITagSearchRepository, TagSearchRepository>();
 
 var app = builder.Build();
 

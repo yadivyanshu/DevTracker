@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../DevTracker.Common/DevTracker.Common.csproj" />
     <ProjectReference Include="../DevTracker.Domain/DevTracker.Domain.csproj" />
   </ItemGroup>
 

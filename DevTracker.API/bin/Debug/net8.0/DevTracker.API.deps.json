@@ -1249,6 +1249,9 @@
         }
       },
       "DevTracker.Common/1.0.0": {
+        "dependencies": {
+          "DevTracker.Domain": "1.0.0"
+        },
         "runtime": {
           "DevTracker.Common.dll": {
             "assemblyVersion": "1.0.0",
@@ -1266,6 +1269,7 @@
       },
       "DevTracker.Infrastructure/1.0.0": {
         "dependencies": {
+          "DevTracker.Common": "1.0.0",
           "DevTracker.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",

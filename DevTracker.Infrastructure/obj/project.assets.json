@@ -1765,6 +1765,19 @@
           }
         }
       },
+      "DevTracker.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DevTracker.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DevTracker.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DevTracker.Common.dll": {}
+        }
+      },
       "DevTracker.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5093,6 +5106,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "DevTracker.Common/1.0.0": {
+      "type": "project",
+      "path": "../DevTracker.Common/DevTracker.Common.csproj",
+      "msbuildProject": "../DevTracker.Common/DevTracker.Common.csproj"
+    },
     "DevTracker.Domain/1.0.0": {
       "type": "project",
       "path": "../DevTracker.Domain/DevTracker.Domain.csproj",
@@ -5101,6 +5119,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "DevTracker.Common >= 1.0.0",
       "DevTracker.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
@@ -5135,6 +5154,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj": {
+              "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj"
+            },
             "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
               "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj"
             }

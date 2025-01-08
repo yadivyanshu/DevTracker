@@ -108,7 +108,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -225,6 +229,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj": {
+                "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/DevTracker.Common.csproj"
+              },
               "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj": {
                 "projectPath": "/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Domain/DevTracker.Domain.csproj"
               }

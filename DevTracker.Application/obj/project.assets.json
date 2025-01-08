@@ -1225,6 +1225,9 @@
       "DevTracker.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DevTracker.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/DevTracker.Common.dll": {}
         },
@@ -1246,6 +1249,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "DevTracker.Common": "1.0.0",
           "DevTracker.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",

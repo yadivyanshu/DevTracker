@@ -22,3 +22,7 @@
 /Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/obj/Debug/net8.0/refint/DevTracker.Common.dll
 /Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.pdb
 /Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/obj/Debug/net8.0/ref/DevTracker.Common.dll
+/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/bin/Debug/net8.0/DevTracker.Domain.dll
+/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/bin/Debug/net8.0/DevTracker.Domain.pdb
+/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTracker.Common.csproj.AssemblyReference.cache
+/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.Common/obj/Debug/net8.0/DevTrack.C1E4E970.Up2Date
