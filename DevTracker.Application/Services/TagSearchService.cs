@@ -14,11 +14,6 @@ namespace DevTracker.Application.Services
             _tagSearchRepository = tagSearchRepository;
         }
 
-        public async Task<List<EntitySearchResultDTO>> SearchEntitiesAsync(TagSearchDTO searchCriteria)
-        {
-            return await _tagSearchRepository.SearchEntitiesAsync(searchCriteria);
-        }
-
         public async Task<List<TagUsageFrequencyDTO>> GetTagUsageFrequencyAsync()
         {
             return await _tagSearchRepository.GetTagUsageFrequencyAsync();
@@ -37,6 +32,11 @@ namespace DevTracker.Application.Services
         public async Task<List<TagSearchDTO>> SearchEntitiesByTagNameAsync(string tagName)
         {
             return await _tagSearchRepository.SearchEntitiesByTagNameAsync(tagName);
+        }
+
+        public async Task<List<TagSearchDTO>> SearchEntitiesByMultipleTagsAsync(List<string> tagNames)
+        {
+            return await _tagSearchRepository.SearchEntitiesByMultipleTagsAsync(tagNames);
         }
     }
 }

@@ -15,13 +15,6 @@ public class TagSearchController : ControllerBase
         _tagSearchService = tagSearchService;
     }
 
-    [HttpPost("SearchEntities")]
-    public async Task<IActionResult> SearchEntities([FromBody] TagSearchDTO searchCriteria)
-    {
-        var result = await _tagSearchService.SearchEntitiesAsync(searchCriteria);
-        return Ok(result);
-    }
-
     [HttpGet("TagUsageFrequency")]
     public async Task<IActionResult> GetTagUsageFrequency()
     {
@@ -55,6 +48,16 @@ public class TagSearchController : ControllerBase
             return BadRequest("Tag name cannot be empty.");
 
         var result = await _tagSearchService.SearchEntitiesByTagNameAsync(tagName);
+        return Ok(result);
+    }
+
+    [HttpPost("SearchByMultipleTags")]
+    public async Task<IActionResult> SearchByMultipleTags([FromBody] List<string> tagNames)
+    {
+        if (tagNames == null || !tagNames.Any())
+            return BadRequest("Tag names cannot be null or empty.");
+
+        var result = await _tagSearchService.SearchEntitiesByMultipleTagsAsync(tagNames);
         return Ok(result);
     }
 

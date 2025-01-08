@@ -25,8 +25,7 @@ namespace DevTracker.Infrastructure.Helpers
                         AssigneeId = ti.AssigneeId,
                         Title = ti.Title,
                         Description = ti.Description,
-                        Severity = null, 
-                        MultipleTagIds = null 
+                        Severity = null
                     })
                     .FirstOrDefaultAsync(),
 
@@ -42,8 +41,7 @@ namespace DevTracker.Infrastructure.Helpers
                         AssigneeId = b.AssigneeId,
                         Title = b.Title,
                         Description = b.Description,
-                        Severity = b.Severity.ToString(),
-                        MultipleTagIds = null
+                        Severity = b.Severity.ToString()
                     })
                     .FirstOrDefaultAsync(),
 
@@ -59,8 +57,7 @@ namespace DevTracker.Infrastructure.Helpers
                         AssigneeId = null,
                         Title = f.Title,
                         Description = f.Description,
-                        Severity = null,
-                        MultipleTagIds = null
+                        Severity = null
                     })
                     .FirstOrDefaultAsync(),
 

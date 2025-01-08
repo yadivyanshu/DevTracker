@@ -13,6 +13,5 @@ namespace DevTracker.Common.DTOs
         public string? Title { get; set; }
         public string? Description { get; set; }
         public string? Severity { get; set; }
-        public List<int>? MultipleTagIds { get; set; }
     }
 }
