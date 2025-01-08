@@ -48,4 +48,14 @@ public class TagSearchController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("SearchByTag/{tagName}")]
+    public async Task<IActionResult> SearchByTag(string tagName)
+    {
+        if (string.IsNullOrWhiteSpace(tagName))
+            return BadRequest("Tag name cannot be empty.");
+
+        var result = await _tagSearchService.SearchEntitiesByTagNameAsync(tagName);
+        return Ok(result);
+    }
+
 }

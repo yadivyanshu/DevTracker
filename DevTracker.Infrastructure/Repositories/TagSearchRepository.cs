@@ -183,6 +183,66 @@ namespace DevTracker.Infrastructure.Repositories
             return result;
         }
 
+        public async Task<List<TagSearchDTO>> SearchEntitiesByTagNameAsync(string tagName)
+        {
+            if (string.IsNullOrWhiteSpace(tagName))
+                throw new ArgumentException("Tag name cannot be null or empty.", nameof(tagName));
 
+            // Step 1: Find matching tags
+            var tagIds = await _context.Tags
+                .Where(tag => EF.Functions.Like(tag.Name.ToLower(), $"%{tagName.ToLower()}%"))
+                .Select(tag => tag.Id)
+                .ToListAsync();
+
+            if (!tagIds.Any())
+            {
+                // No matching tags found
+                return new List<TagSearchDTO>();
+            }
+
+            // Step 2: Find entities associated with these tags
+            var taggings = await _context.Taggings
+                .Where(t => tagIds.Contains(t.TagId))
+                .Include(t => t.Tag) // Ensure Tag navigation property is loaded
+                .ToListAsync();
+
+            if (taggings == null || !taggings.Any())
+            {
+                // No taggings found for matching tags
+                return new List<TagSearchDTO>();
+            }
+
+            // Step 3: Fetch details of associated entities
+            var result = new List<TagSearchDTO>();
+            foreach (var tagging in taggings)
+            {
+                // Guard against null navigation properties
+                if (tagging.Tag == null)
+                {
+                    Console.WriteLine($"Warning: Tag with ID {tagging.TagId} not found.");
+                    continue;
+                }
+
+                var entityDetails = await EntityDetailsHelper.GetEntityDetailsAsync(_context, tagging.EntityType, tagging.EntityId);
+
+                if (entityDetails != null)
+                {
+                    result.Add(new TagSearchDTO
+                    {
+                        TagId = tagging.TagId,
+                        TagName = tagging.Tag.Name,
+                        EntityType = tagging.EntityType,
+                        EntityId = tagging.EntityId,
+                        Title = entityDetails.Title,
+                        Description = entityDetails.Description,
+                        Severity = entityDetails.Severity,
+                        Status = entityDetails.Status,
+                        AssigneeId = entityDetails.AssigneeId
+                    });
+                }
+            }
+
+            return result;
+        }
     }
 }

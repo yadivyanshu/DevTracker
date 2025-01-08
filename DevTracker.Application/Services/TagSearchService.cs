@@ -33,5 +33,10 @@ namespace DevTracker.Application.Services
         {
             return await _tagSearchRepository.GetTagsByEntityTypeAsync(entityType);
         }
+
+        public async Task<List<TagSearchDTO>> SearchEntitiesByTagNameAsync(string tagName)
+        {
+            return await _tagSearchRepository.SearchEntitiesByTagNameAsync(tagName);
+        }
     }
 }
