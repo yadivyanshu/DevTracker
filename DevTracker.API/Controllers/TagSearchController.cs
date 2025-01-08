@@ -29,10 +29,23 @@ public class TagSearchController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("TagsAssignedToEntity/{entityId}/{entityType}")]
-    public async Task<IActionResult> GetTagsAssignedToEntity(int entityId, EntityTypeEnum entityType)
+    [HttpGet("TagsAssignedToEntity/{entityType}/{entityId?}")]
+    public async Task<IActionResult> GetTagsAssignedToEntity(EntityTypeEnum entityType, int? entityId = null)
     {
-        var result = await _tagSearchService.GetTagsAssignedToEntityAsync(entityId, entityType);
+        List<TagSearchDTO> result;
+
+        if (entityId.HasValue)
+        {
+            // Fetch tags for a specific entity
+            result = await _tagSearchService.GetTagsAssignedToEntityAsync(entityId.Value, entityType);
+        }
+        else
+        {
+            // Fetch all tags used in the specified entity type
+            result = await _tagSearchService.GetTagsByEntityTypeAsync(entityType);
+        }
+
         return Ok(result);
     }
+
 }

@@ -3,6 +3,7 @@ using DevTracker.Common.DTOs;
 using DevTracker.Infrastructure.DataContext;
 using DevTracker.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using DevTracker.Infrastructure.Helpers;
 
 namespace DevTracker.Infrastructure.Repositories
 {
@@ -113,13 +114,75 @@ namespace DevTracker.Infrastructure.Repositories
 
         public async Task<List<TagSearchDTO>> GetTagsAssignedToEntityAsync(int entityId, EntityTypeEnum entityType)
         {
-            return await _context.Taggings
-                .Where(t => t.EntityId == entityId && t.EntityType.Equals(entityType))
+            var taggings = await _context.Taggings
+            .Where(t => t.EntityId == entityId && t.EntityType.Equals(entityType))
+            .Select(t => new
+            {
+                t.TagId,
+                TagName = t.Tag.Name,
+                t.EntityType
+            })
+            .ToListAsync();
+
+            // Step 2: Process statuses asynchronously
+            var result = new List<TagSearchDTO>();
+            foreach (var tagging in taggings)
+            {
+                var entityDetails = await EntityDetailsHelper.GetEntityDetailsAsync(_context, tagging.EntityType, entityId);
+
+                result.Add(new TagSearchDTO
+                {
+                    TagId = tagging.TagId,
+                    TagName = tagging.TagName,
+                    EntityType = tagging.EntityType,
+                    EntityId = entityId,
+                    Status = entityDetails.Status,
+                    AssigneeId = entityDetails.AssigneeId,
+                    Title = entityDetails.Title,
+                    Description = entityDetails.Description,
+                    Severity = entityDetails.Severity
+                });
+            }
+
+            return result;
+        }
+
+        public async Task<List<TagSearchDTO>> GetTagsByEntityTypeAsync(EntityTypeEnum entityType)
+        {
+            var taggings = await _context.Taggings
+                .Where(t => t.EntityType == entityType)
                 .Select(t => new TagSearchDTO
                 {
-                    TagId = t.TagId
+                    TagId = t.TagId,
+                    TagName = t.Tag.Name,
+                    EntityType = t.EntityType,
+                    EntityId = t.EntityId
                 })
                 .ToListAsync();
+
+                // Step 2: Process statuses asynchronously
+            var result = new List<TagSearchDTO>();
+            foreach (var tagging in taggings)
+            {
+                var entityDetails = await EntityDetailsHelper.GetEntityDetailsAsync(_context, (EntityTypeEnum)tagging.EntityType, tagging.EntityId.Value);
+                                
+                result.Add(new TagSearchDTO
+                {
+                    TagId = tagging.TagId,
+                    TagName = tagging.TagName,
+                    EntityType = tagging.EntityType,
+                    EntityId = tagging.EntityId,
+                    AssigneeId = entityDetails.AssigneeId,
+                    Status = entityDetails.Status,
+                    Title = entityDetails.Title,
+                    Description = entityDetails.Description,
+                    Severity = entityDetails.Severity
+                });
+            }
+
+            return result;
         }
+
+
     }
 }

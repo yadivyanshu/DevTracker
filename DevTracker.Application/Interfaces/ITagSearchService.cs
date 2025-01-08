@@ -8,5 +8,6 @@ namespace DevTracker.Application.Interfaces
         Task<List<EntitySearchResultDTO>> SearchEntitiesAsync(TagSearchDTO searchCriteria);
         Task<List<TagUsageFrequencyDTO>> GetTagUsageFrequencyAsync();
         Task<List<TagSearchDTO>> GetTagsAssignedToEntityAsync(int entityId, EntityTypeEnum entityType);
+        Task<List<TagSearchDTO>> GetTagsByEntityTypeAsync(EntityTypeEnum entityType);
     }
 }
