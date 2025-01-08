@@ -68,6 +68,44 @@ namespace DevTracker.Infrastructure.Migrations
                     b.ToTable("Bugs");
                 });
 
+            modelBuilder.Entity("DevTracker.Domain.Entities.Discussion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CreatedById")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("EntityId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int?>("ParentDiscussionId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.ToTable("Discussions");
+                });
+
             modelBuilder.Entity("DevTracker.Domain.Entities.Feature", b =>
                 {
                     b.Property<int>("Id")
@@ -107,6 +145,29 @@ namespace DevTracker.Infrastructure.Migrations
                     b.ToTable("Features");
                 });
 
+            modelBuilder.Entity("DevTracker.Domain.Entities.Mention", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DiscussionId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MentionedUserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DiscussionId");
+
+                    b.HasIndex("MentionedUserId");
+
+                    b.ToTable("Mention");
+                });
+
             modelBuilder.Entity("DevTracker.Domain.Entities.Project", b =>
                 {
                     b.Property<int>("Id")
@@ -135,6 +196,36 @@ namespace DevTracker.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("DevTracker.Domain.Entities.Reaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DiscussionId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ReactedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ReactionType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DiscussionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reaction");
                 });
 
             modelBuilder.Entity("DevTracker.Domain.Entities.Tag", b =>
@@ -294,6 +385,17 @@ namespace DevTracker.Infrastructure.Migrations
                     b.Navigation("Feature");
                 });
 
+            modelBuilder.Entity("DevTracker.Domain.Entities.Discussion", b =>
+                {
+                    b.HasOne("DevTracker.Domain.Entities.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CreatedBy");
+                });
+
             modelBuilder.Entity("DevTracker.Domain.Entities.Feature", b =>
                 {
                     b.HasOne("DevTracker.Domain.Entities.Project", "Project")
@@ -303,6 +405,44 @@ namespace DevTracker.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("DevTracker.Domain.Entities.Mention", b =>
+                {
+                    b.HasOne("DevTracker.Domain.Entities.Discussion", "Discussion")
+                        .WithMany("Mentions")
+                        .HasForeignKey("DiscussionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevTracker.Domain.Entities.User", "MentionedUser")
+                        .WithMany()
+                        .HasForeignKey("MentionedUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Discussion");
+
+                    b.Navigation("MentionedUser");
+                });
+
+            modelBuilder.Entity("DevTracker.Domain.Entities.Reaction", b =>
+                {
+                    b.HasOne("DevTracker.Domain.Entities.Discussion", "Discussion")
+                        .WithMany("Reactions")
+                        .HasForeignKey("DiscussionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevTracker.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Discussion");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DevTracker.Domain.Entities.Tagging", b =>
@@ -333,6 +473,13 @@ namespace DevTracker.Infrastructure.Migrations
                     b.Navigation("Assignee");
 
                     b.Navigation("Feature");
+                });
+
+            modelBuilder.Entity("DevTracker.Domain.Entities.Discussion", b =>
+                {
+                    b.Navigation("Mentions");
+
+                    b.Navigation("Reactions");
                 });
 
             modelBuilder.Entity("DevTracker.Domain.Entities.Project", b =>

@@ -18,6 +18,7 @@ namespace DevTracker.Infrastructure.DataContext
         public DbSet<Bug> Bugs { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Tagging> Taggings { get; set; }
+        public DbSet<Discussion> Discussions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -113,6 +114,13 @@ namespace DevTracker.Infrastructure.DataContext
 
             modelBuilder.Entity<Tagging>()
                         .Property(f => f.EntityType)
+                        .HasConversion(
+                            v => v.ToString(), 
+                            v => (EntityTypeEnum)Enum.Parse(typeof(EntityTypeEnum), v) 
+                        );
+            
+            modelBuilder.Entity<Discussion>()
+                        .Property(d => d.EntityType)
                         .HasConversion(
                             v => v.ToString(), 
                             v => (EntityTypeEnum)Enum.Parse(typeof(EntityTypeEnum), v) 

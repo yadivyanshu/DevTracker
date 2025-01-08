@@ -47,6 +47,9 @@ builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<ITagSearchService, TagSearchService>();
 builder.Services.AddScoped<ITagSearchRepository, TagSearchRepository>();
 
+builder.Services.AddScoped<IDiscussionService, DiscussionService>();
+builder.Services.AddScoped<IDiscussionRepository, DiscussionRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
