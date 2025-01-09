@@ -58,5 +58,10 @@ namespace DevTracker.Application.Services
         {
             await _userRepository.DeleteUserAsync(id);
         }
+
+        public async Task<User> GetUserByUsernameOrEmailAsync(string usernameOrEmail)
+        {
+            return await _userRepository.GetUserByUsernameOrEmailAsync(usernameOrEmail);
+        }
     }
 }

@@ -52,5 +52,10 @@ namespace DevTracker.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<User> GetUserByUsernameOrEmailAsync(string usernameOrEmail)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Username == usernameOrEmail || u.Email == usernameOrEmail);
+        }
     }
 }

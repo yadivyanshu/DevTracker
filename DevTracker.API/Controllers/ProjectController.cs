@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using DevTracker.Application.Interfaces;
 using DevTracker.Application.DTOs;
 using DevTracker.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DevTracker.API.Controllers
 {
@@ -16,6 +17,13 @@ namespace DevTracker.API.Controllers
         {
             _service = service;
             _featureService = featureService;
+        }
+
+        [Authorize]
+        [HttpGet("basic-auth")]
+        public IActionResult BasicAuth()
+        {
+            return Ok("You are authenticated.");
         }
 
         [HttpGet]

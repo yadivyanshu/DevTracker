@@ -376,3 +376,4 @@
 /Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/obj/Debug/net8.0/DevTracker.API.pdb
 /Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/obj/Debug/net8.0/DevTracker.API.genruntimeconfig.cache
 /Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/obj/Debug/net8.0/ref/DevTracker.API.dll
+/Users/divyanshuyadav/Desktop/DevTracker/DevTracker.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

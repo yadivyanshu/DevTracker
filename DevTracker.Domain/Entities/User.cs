@@ -14,6 +14,5 @@ namespace DevTracker.Domain.Entities
         public UserRole Role { get; set; }  
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-        // public ICollection<Task> AssignedTasks { get; set; }
     }
 }

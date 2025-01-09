@@ -11,5 +11,6 @@ namespace DevTracker.Application.Interfaces
         Task UpdateUserAsync(int id, UpdateUserDTO updateUserDTO);
         Task DeleteUserAsync(int id);
         Task<List<UserDTO>> GetAllUsersAsync();
+        Task<User> GetUserByUsernameOrEmailAsync(string usernameOrEmail);
     }
 }

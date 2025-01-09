@@ -9,5 +9,6 @@ namespace DevTracker.Infrastructure.Repositories.Interfaces{
         Task AddUserAsync(User user);
         Task UpdateUserAsync(User user);
         Task DeleteUserAsync(int id);
+        Task<User> GetUserByUsernameOrEmailAsync(string usernameOrEmail);
     }
 }
