@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevTracker.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b46a419bfa7597d75fbbc0b69bd8a91d635800")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c44cabd3aad0c7940d4a308ad8c423496cb63cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevTracker.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevTracker.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

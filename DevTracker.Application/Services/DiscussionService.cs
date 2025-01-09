@@ -53,52 +53,50 @@ namespace DevTracker.Application.Services
         public async Task<DiscussionDTO> GetByIdAsync(int id)
         {
             var discussion = await _repository.GetByIdAsync(id);
-            return discussion != null
-                ? new DiscussionDTO
+            return new DiscussionDTO
                 {
                     Id = discussion.Id,
                     Content = discussion.Content,
                     CreatedAt = discussion.CreatedAt,
-                    CreatedBy = discussion.CreatedBy.Username,
+                    CreatedBy = discussion.CreatedBy?.Username?? "Unknown",
                     EntityType = discussion.EntityType.ToString(),
                     EntityId = discussion.EntityId,
                     // Mentions = discussion.Mentions.Select(m => m.Username).ToList(),
-                    Reactions = discussion.Reactions.Select(r => r.ReactionType.ToString()).ToList(),
+                    // Reactions = discussion.Reactions.Select(r => r.ReactionType.ToString()).ToList(),
                     ParentDiscussionId = discussion.ParentDiscussionId,
                     UpdatedAt = discussion.UpdatedAt
-                }
-                : null;
+                };
         }
 
         public async Task<List<DiscussionDTO>> GetByEntityAsync(int entityId, EntityTypeEnum entityType)
-{
-    // Fetch discussions with navigation properties eagerly loaded
-    var discussions = await _repository.GetByEntityAsync(entityId, entityType);
+        {
+            // Fetch discussions with navigation properties eagerly loaded
+            var discussions = await _repository.GetByEntityAsync(entityId, entityType);
 
-    // Map discussions to DTOs, adding null checks
-    return discussions.Select(d => new DiscussionDTO
-    {
-        Id = d.Id,
-        EntityId = d.EntityId,
-        EntityType = d.EntityType.ToString(),
-        Content = d.Content,
-        CreatedBy = d.CreatedBy?.Username ?? "Unknown", // Handle null CreatedBy
-        CreatedAt = d.CreatedAt,
-        UpdatedAt = d.UpdatedAt,
-        ParentDiscussionId = d.ParentDiscussionId,
-        // Mentions = d.Mentions?.Select(m => new MentionDTO
-        // {
-        //     Id = m.Id,
-        //     MentionedUser = m.MentionedUser?.Username ?? "Unknown" // Handle null MentionedUser
-        // }).ToList(),
-        // Reactions = d.Reactions?.Select(r => new ReactionDTO
-        // {
-        //     Id = r.Id,
-        //     ReactionType = r.ReactionType,
-        //     CreatedBy = r.CreatedBy?.Username ?? "Unknown" // Handle null CreatedBy
-        // }).ToList()
-    }).ToList();
-}
+            // Map discussions to DTOs, adding null checks
+            return discussions.Select(d => new DiscussionDTO
+            {
+                Id = d.Id,
+                EntityId = d.EntityId,
+                EntityType = d.EntityType.ToString(),
+                Content = d.Content,
+                CreatedBy = d.CreatedBy?.Username ?? "Unknown", // Handle null CreatedBy
+                CreatedAt = d.CreatedAt,
+                UpdatedAt = d.UpdatedAt,
+                ParentDiscussionId = d.ParentDiscussionId,
+                // Mentions = d.Mentions?.Select(m => new MentionDTO
+                // {
+                //     Id = m.Id,
+                //     MentionedUser = m.MentionedUser?.Username ?? "Unknown" // Handle null MentionedUser
+                // }).ToList(),
+                // Reactions = d.Reactions?.Select(r => new ReactionDTO
+                // {
+                //     Id = r.Id,
+                //     ReactionType = r.ReactionType,
+                //     CreatedBy = r.CreatedBy?.Username ?? "Unknown" // Handle null CreatedBy
+                // }).ToList()
+            }).ToList();
+        }
 
         public async Task UpdateAsync(int id, UpdateDiscussionDTO dto)
         {

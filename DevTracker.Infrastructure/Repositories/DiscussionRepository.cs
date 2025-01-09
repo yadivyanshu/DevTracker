@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DevTracker.Domain.Entities;
 using DevTracker.Domain.Enums;
 using DevTracker.Infrastructure.DataContext;
@@ -52,7 +49,7 @@ namespace DevTracker.Infrastructure.Repositories
             return await _context.Discussions
                         .Include(d => d.Mentions)
                         .Include(d => d.Reactions)
-                        .Include(d => d.CreatedBy) // Ensure this is loaded
+                        .Include(d => d.CreatedBy) 
                         .Where(d => d.EntityId == entityId && d.EntityType == entityType)
                         .ToListAsync();
         }
