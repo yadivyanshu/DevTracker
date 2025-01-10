@@ -19,13 +19,6 @@ namespace DevTracker.API.Controllers
             _featureService = featureService;
         }
 
-        [Authorize]
-        [HttpGet("basic-auth")]
-        public IActionResult BasicAuth()
-        {
-            return Ok("You are authenticated.");
-        }
-
         [HttpGet]
         public IActionResult GetAllProjects()
         {
