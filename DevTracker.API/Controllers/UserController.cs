@@ -1,9 +1,11 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DevTracker.API.Controllers
 {
+    
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
@@ -15,6 +17,7 @@ namespace DevTracker.API.Controllers
             _userService = userService;
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
@@ -22,6 +25,7 @@ namespace DevTracker.API.Controllers
             return Ok(user);
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -29,6 +33,7 @@ namespace DevTracker.API.Controllers
             return Ok(users);
         }
 
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] CreateUserDTO createUserDTO)
         {
@@ -36,6 +41,7 @@ namespace DevTracker.API.Controllers
             return CreatedAtAction(nameof(GetUserById), new { id = createdUser.Id }, createdUser);
         }
 
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserDTO updateUserDTO)
         {
@@ -43,6 +49,7 @@ namespace DevTracker.API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin, Manager")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

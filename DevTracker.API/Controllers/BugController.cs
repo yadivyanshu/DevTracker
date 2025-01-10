@@ -1,9 +1,11 @@
 using DevTracker.Application.DTOs;
 using DevTracker.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevTracker.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class BugController : ControllerBase

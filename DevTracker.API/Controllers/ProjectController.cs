@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DevTracker.API.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProjectController : ControllerBase

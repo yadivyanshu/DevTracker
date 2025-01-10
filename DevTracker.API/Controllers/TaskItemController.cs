@@ -1,7 +1,9 @@
 using DevTracker.Application.Interfaces;
 using DevTracker.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class TaskItemController : ControllerBase

@@ -2,9 +2,11 @@ using DevTracker.Domain.Enums;
 using DevTracker.API.DTOs;
 using DevTracker.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DevTracker.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class DiscussionController : ControllerBase

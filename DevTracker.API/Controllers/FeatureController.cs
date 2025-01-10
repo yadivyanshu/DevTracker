@@ -1,12 +1,14 @@
 using DevTracker.API.DTOs;
 using DevTracker.Application.Interfaces;
 using DevTracker.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DevTracker.API.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     [Route("api/[controller]")]
     [ApiController]
     public class FeatureController : ControllerBase
@@ -22,19 +24,8 @@ namespace DevTracker.API.Controllers
         public async Task<ActionResult<List<FeatureDTO>>> GetAllFeatures()
         {
             var features = await _featureService.GetAllFeatures();
-            return Ok(features);  // Convert to DTO if needed
+            return Ok(features);  
         }
-
-        // [HttpGet("{id}")]
-        // public async Task<ActionResult<FeatureDTO>> GetFeatureById(int id)
-        // {
-        //     var feature = await _featureService.GetFeatureById(id);
-        //     if (feature == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     return Ok(feature);  // Convert to DTO if needed
-        // }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFeatureById(int id)

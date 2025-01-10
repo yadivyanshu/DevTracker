@@ -2,8 +2,9 @@ using DevTracker.Common.DTOs;
 using DevTracker.Application.Interfaces;
 using DevTracker.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class TagSearchController : ControllerBase
@@ -29,12 +30,10 @@ public class TagSearchController : ControllerBase
 
         if (entityId.HasValue)
         {
-            // Fetch tags for a specific entity
             result = await _tagSearchService.GetTagsAssignedToEntityAsync(entityId.Value, entityType);
         }
         else
         {
-            // Fetch all tags used in the specified entity type
             result = await _tagSearchService.GetTagsByEntityTypeAsync(entityType);
         }
 

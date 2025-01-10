@@ -2,9 +2,11 @@ using DevTracker.Application.Interfaces;
 using DevTracker.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using DevTracker.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DevTracker.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TagController : ControllerBase
@@ -30,6 +32,7 @@ namespace DevTracker.API.Controllers
             return Ok(tag);
         }
 
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost]
         public async Task<IActionResult> CreateTag([FromBody] CreateTagDTO createTagDTO)
         {
@@ -37,6 +40,7 @@ namespace DevTracker.API.Controllers
             return CreatedAtAction(nameof(GetTagById), new { id = createTagDTO.Name }, createTagDTO);
         }
 
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost("{tagId}/assign/{entityId}")]
         public async Task<IActionResult> AssignTagToEntity(int tagId, int entityId, [FromQuery] EntityTypeEnum entityType)
         {
