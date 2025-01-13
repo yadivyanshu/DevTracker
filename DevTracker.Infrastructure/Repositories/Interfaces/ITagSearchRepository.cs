@@ -1,7 +1,5 @@
 using DevTracker.Domain.Enums;
 using DevTracker.Common.DTOs;
-using DevTracker.Infrastructure.DataContext;
-using Microsoft.EntityFrameworkCore;
 
 namespace DevTracker.Infrastructure.Repositories.Interfaces{
     public interface ITagSearchRepository

@@ -1,4 +1,3 @@
-using DevTracker.Domain.Entities;
 using DevTracker.Application.DTOs;
 
 namespace DevTracker.Application.Interfaces

@@ -1,8 +1,6 @@
 using DevTracker.Infrastructure.DataContext;
 using DevTracker.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 using DevTracker.Infrastructure.Repositories.Interfaces;
 
 namespace DevTracker.Infrastructure.Repositories

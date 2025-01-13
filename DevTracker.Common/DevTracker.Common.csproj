@@ -10,8 +10,4 @@
     <ProjectReference Include="../DevTracker.Domain/DevTracker.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Enums/" />
-  </ItemGroup>
-
 </Project>
